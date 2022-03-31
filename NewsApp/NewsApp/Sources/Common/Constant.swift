@@ -8,7 +8,7 @@
 import Foundation
 
 enum APIConstant {
-  static let apiKeyValue = "6849398cf0e74e2db2b630a22b6b20e3" // "302e7f29375f4f5e85c71a0edcfb1d69" 
+  static let apiKeyValue = "6849398cf0e74e2db2b630a22b6b20e3"
   static let country = "country"
   static let apiKey = "apiKey"
   static let pageSize = "pageSize"
