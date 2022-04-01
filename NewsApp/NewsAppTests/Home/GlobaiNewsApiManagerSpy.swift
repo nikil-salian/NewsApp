@@ -15,7 +15,7 @@ final class GlobaiNewsApiManagerSpy: GlobalNewsApiManagerProtocol {
   private var popularNewsResponseModel: NewsResponseModel?
   private var error: HandleError?
 
-  func getTopNews(countryCode: String?, completion: @escaping (Result<NewsResponseModel, HandleError>) -> Void) {
+  func getTopNews(countryCode: String, completion: @escaping (Result<NewsResponseModel, HandleError>) -> Void) {
     if let errorUnwrapped = error {
       completion(Result.failure(errorUnwrapped))
     } else {
@@ -27,7 +27,7 @@ final class GlobaiNewsApiManagerSpy: GlobalNewsApiManagerProtocol {
     }
   }
 
-  func getPopularNews(query: String?, from: String?, pageSize: Int, page: Int, completion: @escaping (Result<NewsResponseModel, HandleError>) -> Void) {
+  func getPopularNews(query: String, from: String, pageSize: Int, page: Int, completion: @escaping (Result<NewsResponseModel, HandleError>) -> Void) {
     if let errorUnwrapped = error {
       completion(Result.failure(errorUnwrapped))
     } else {

@@ -45,7 +45,7 @@ enum ErrorConstant {
   static let somethingWentWrong = "Something went wrong"
 }
 
-enum UIAlertConstant {
+enum AlertConstant {
   static let ok = "OK"
 }
 

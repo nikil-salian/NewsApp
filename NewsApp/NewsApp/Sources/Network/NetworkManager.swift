@@ -10,7 +10,6 @@ import Foundation
 class NetworkManager: NSObject {
   static let shared = NetworkManager()
   private var session: URLSession!
-  private var sessionDataTask: URLSessionDataTask?
 
   private override init() {
     super.init()
@@ -32,7 +31,7 @@ class NetworkManager: NSObject {
       return
     }
     debugPrint("request: \(request)")
-    sessionDataTask = session?.dataTask(with: request) { data, response, error in
+    let task = session?.dataTask(with: request) { data, response, error in
       if let err = error {
         if err._domain == NSURLErrorDomain && err._code == NSURLErrorTimedOut {
           completion(Result.failure(.resourceTimedOut))
@@ -54,6 +53,6 @@ class NetworkManager: NSObject {
         return
       }
     }
-    sessionDataTask?.resume()
+    task?.resume()
   }
 }

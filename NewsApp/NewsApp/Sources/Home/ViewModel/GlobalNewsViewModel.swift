@@ -21,6 +21,7 @@ protocol GlobalNewsViewModelOutputs {
   var reloadData: (() -> Void) { get set }
 }
 
+
 // MARK: GlobalNewsLayout
 enum GlobalNewsLayout {
   case topNews(title: String, item: ArticleDisplayble)
